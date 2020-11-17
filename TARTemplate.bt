@@ -7,8 +7,8 @@
 // Purpose: Read TAR Files
 //--------------------------------------
 
-int OctalFilesizeStringToInt(char str[]){
-    local int x;
+int64 OctalFilesizeStringToInt(char str[]){
+    local int64 x;
     local int i;
     x = 0;
     for (i = 0; i <= 10; i++ ){
@@ -37,7 +37,7 @@ struct TAR_ENTRY {
         char prefix[155];             /* 345 */
                                       /* 500 */
 };
-local int len;
+local int64 len;
 while (!FEof()){
     SetBackColor( cLtGray );
     TAR_ENTRY entry;
